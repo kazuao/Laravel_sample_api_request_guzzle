@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'PostController@index');
+
+Route::get('/create', function() {
+    return view('form');
 });
+Route::post('/send', 'PostController@send');
